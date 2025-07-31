@@ -30,7 +30,8 @@ class TextScrollHighlight {
     return keyCurrentState;
   }
 
-  static _setKeyCurrentState(HighlightedTextScrollableState? keyCurrentState) {
+  static void _setKeyCurrentState(
+      HighlightedTextScrollableState? keyCurrentState) {
     if (keyCurrentState != null) {
       TextScrollHighlightHelper._setKeyCurrentState(keyCurrentState);
     }
@@ -40,7 +41,7 @@ class TextScrollHighlight {
 class TextScrollHighlightHelper {
   static late HighlightedTextScrollableState _currentState;
 
-  static _setKeyCurrentState(
+  static void _setKeyCurrentState(
       HighlightedTextScrollableState highlightedTextScrollableState) {
     _currentState = highlightedTextScrollableState;
   }
