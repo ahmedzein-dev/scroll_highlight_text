@@ -1,7 +1,15 @@
 name: scroll_highlight_text
 description: Flutter package for highlighting and scrolling through text.
-version: 1.0.1
-homepage: https://github.com/AhmedZein1996/scroll_highlight_text.git
+version: 1.0.2
+homepage: https://github.com/ahmedzein-dev/scroll_highlight_text
+issue_tracker: https://github.com/ahmedzein-dev/scroll_highlight_text/issues
+
+topics:
+  - scroll
+  - highlight
+  - text
+  - reader
+  - widget
 
 environment:
   sdk: '>=3.3.4 <4.0.0'

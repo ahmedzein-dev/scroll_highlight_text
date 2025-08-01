@@ -98,3 +98,7 @@ The changes in version 0.1.2 include:
 
 - Updated the example.
 
+- ## 1.0.2
+
+- Updated metadata.
+
