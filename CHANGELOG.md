@@ -102,3 +102,7 @@ The changes in version 0.1.2 include:
 
 - Updated metadata.
 
+- ## 1.0.3
+
+- Updated metadata.
+
