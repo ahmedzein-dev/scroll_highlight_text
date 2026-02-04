@@ -41,11 +41,11 @@ class _MyAppState extends State<MyApp> {
                 Expanded(
                   child: HighlightedTextScrollable(
                     searchController: controller,
-                    // text: englishContent,
+                    text: englishContent,
                     showMatchNavigation: true,
-                    text: arabicContent,
-                    textDirection: TextDirection
-                        .rtl, // Add this line if the text is Arabic.
+                    // text: arabicContent,
+                    // textDirection: TextDirection
+                    //     .rtl, // Add this line if the text is Arabic.
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,
                       vertical: 20,
