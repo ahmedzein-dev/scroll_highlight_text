@@ -115,5 +115,7 @@ The changes in version 0.1.2 include:
 - Add: built-in navigation UI inside `HighlightedTextScrollable` (`showMatchNavigation`).
 - Add: floating (FAB-like) match navigation overlay (`matchNavigationType: MatchNavigationType.floating`).
 
+## 1.0.5
 
+- Update example1.gif.
 
