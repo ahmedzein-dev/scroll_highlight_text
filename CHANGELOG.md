@@ -106,3 +106,14 @@ The changes in version 0.1.2 include:
 
 - Updated metadata.
 
+## 1.0.4
+
+- Fix: preserve original text casing when highlighting matches.
+- Add: safe literal search by default (`treatInputAsRegex: false`) with optional regex mode.
+- Add: match navigation APIs (`nextMatch`, `previousMatch`, `jumpToMatch`).
+- Add: match callbacks (`onMatchesFound`, `onMatchChanged`, `onSearchCleared`, `onNoMatch`).
+- Add: built-in navigation UI inside `HighlightedTextScrollable` (`showMatchNavigation`).
+- Add: floating (FAB-like) match navigation overlay (`matchNavigationType: MatchNavigationType.floating`).
+
+
+

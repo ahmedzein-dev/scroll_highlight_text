@@ -18,6 +18,13 @@ searchController: controller, // The controller for the text field where the use
 )
 ```
 
+### New: match navigation + callbacks
+
+- Use `TextScrollHighlight.nextMatch()` / `TextScrollHighlight.previousMatch()` to jump between results.
+- Use callbacks to show match count and current match index in your UI.
+- Search input is treated as a **literal string by default** (safe). Set `treatInputAsRegex: true` if you want raw RegExp patterns.
+- You can also enable built-in navigation UI inside the widget (top bar or floating buttons).
+
 ## Example 
 
 Here are small examples that show you how to use the API.
@@ -60,9 +67,38 @@ class _MyAppState extends State<MyApp> {
                     controller: controller,
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    children: [
+                      TextButton(
+                        onPressed: TextScrollHighlight.previousMatch,
+                        child: const Text('Prev'),
+                      ),
+                      TextButton(
+                        onPressed: TextScrollHighlight.nextMatch,
+                        child: const Text('Next'),
+                      ),
+                    ],
+                  ),
+                ),
                 HighlightedTextScrollable(
                   text: englishContent,
                   searchController: controller,
+                  // Built-in navigation UI
+                  showMatchNavigation: true,
+                  onMatchesFound: (count) {
+                    debugPrint('Matches: $count');
+                  },
+                  onMatchChanged: (index, total) {
+                    debugPrint('Match: $index / $total');
+                  },
+                  onNoMatch: () {
+                    debugPrint('No match');
+                  },
+                  onSearchCleared: () {
+                    debugPrint('Search cleared');
+                  },
                   // Add this line if the text is Arabic.
                   // textDirection: TextDirection.rtl,
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
@@ -109,6 +145,17 @@ const String arabicContent = """Your arabic text
 - `padding`: The internal padding around the text widget. Padding should only be applied internally within this widget, not from external sources. If you want to apply custom internal padding, make sure to pass it to `HighlightedTextScrollable`. This ensures that the padding is considered during the calculation process.
 - `durationOfScroll`: The duration of the scrolling animation.
 - `animationCurveOfScroll`: The animation curve used for scrolling transitions.
+- `treatInputAsRegex`: When false (default), the search input is treated as a literal string (escaped). When true, the input is treated as a raw RegExp pattern.
+- `caseSensitive`: Whether the search should be case sensitive. Default is false.
+- `onMatchesFound`: Called whenever matches are calculated.
+- `onMatchChanged`: Called when the highlighted/current match changes. `index` is 1-based (1..total).
+- `onSearchCleared`: Called when the search text becomes empty.
+- `onNoMatch`: Called when search text is not empty but no matches found.
+- `showMatchNavigation`: Show built-in match navigation UI (Prev/Next + `index/total`) inside the widget.
+- `matchNavigationType`: Choose navigation UI type: `MatchNavigationType.bar` (default) or `MatchNavigationType.floating`.
+- `matchNavigationBuilder`: Optional custom builder for the navigation UI.
+- `matchNavigationPadding`: Padding for the default navigation UI (when builder is null).
+- `floatingNavigationPadding`: Padding for the floating navigation overlay.
 
 
 ## Additional Information
