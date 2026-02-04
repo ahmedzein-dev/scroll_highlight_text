@@ -2,16 +2,24 @@
 
 This Flutter package enables highlighting and scrolling through text content in both Latin and Arabic languages. It provides a convenient way to display text with customizable highlighting and scrolling functionality.
 
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <img 
-    src="https://github.com/AhmedZein1996/scroll_highlight_text/raw/main/assets/example1.gif"
-    alt="Scroll Highlight Text Demo"
-    height="800"
-    style="max-width: 100%; border-radius: 12px;"
-  />
-  <br/>
-  <em>Search, highlight and jump between matches smoothly.</em>
-</div>
+## Demo
+
+Here's a quick preview of `ScrollHighlightText` in action:
+
+<table>
+  <tr>
+    <td style="text-align: center;">
+      <img
+        src="https://github.com/AhmedZein1996/scroll_highlight_text/raw/main/assets/example1.gif"
+        width="350"
+        alt="Scroll Highlight Text Demo"
+      />
+      <br/>
+      <em>Search, highlight and jump between matches smoothly.</em>
+    </td>
+  </tr>
+</table>
+
 
 ## Usage
 To use this package in your Flutter project,
