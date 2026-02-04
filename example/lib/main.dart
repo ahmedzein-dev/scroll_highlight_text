@@ -44,8 +44,8 @@ class _MyAppState extends State<MyApp> {
                     // text: englishContent,
                     showMatchNavigation: true,
                     text: arabicContent,
-                    textDirection:
-                        TextDirection.rtl, // Add this line if the text is Arabic.
+                    textDirection: TextDirection
+                        .rtl, // Add this line if the text is Arabic.
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,
                       vertical: 20,
@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 const String englishContent =
-"""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate auctor augue, vitae accumsan odio cursus a. Integer gravida luctus erat, id congue mi vehicula vel. Morbi at neque felis. In hac habitasse platea dictumst. Cras ultricies eros quis libero fringilla, eget convallis leo placerat. Vestibulum vitae odio sit amet lacus feugiat placerat. Nullam id consequat mauris. Maecenas vestibulum magna in vehicula tempor. Ut id dapibus mi. Donec at nisl risus. Quisque nec tortor sit amet nunc suscipit iaculis. Vivamus bibendum risus non magna gravida rutrum. Nulla facilisi. Sed hendrerit eget enim at eleifend.
+    """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate auctor augue, vitae accumsan odio cursus a. Integer gravida luctus erat, id congue mi vehicula vel. Morbi at neque felis. In hac habitasse platea dictumst. Cras ultricies eros quis libero fringilla, eget convallis leo placerat. Vestibulum vitae odio sit amet lacus feugiat placerat. Nullam id consequat mauris. Maecenas vestibulum magna in vehicula tempor. Ut id dapibus mi. Donec at nisl risus. Quisque nec tortor sit amet nunc suscipit iaculis. Vivamus bibendum risus non magna gravida rutrum. Nulla facilisi. Sed hendrerit eget enim at eleifend.
 
 Phasellus at purus ac risus lobortis cursus. Vestibulum bibendum auctor massa sit amet blandit. Sed vel tincidunt est. Vivamus tempor diam vel tortor posuere, eget fermentum arcu tempor. Fusce nec eleifend turpis. Nullam auctor convallis fringilla. Sed id erat velit. Integer pretium ex a nisi vehicula, id euismod sem cursus. Mauris congue massa magna, ut rutrum ipsum dictum non. Integer nec libero a velit dapibus aliquam. Proin blandit ultricies nisi, eget auctor urna cursus ac. Vestibulum euismod augue nec ex ultricies, ac vestibulum lacus mattis. Suspendisse commodo metus ut semper laoreet. Duis tincidunt mauris et risus feugiat, non posuere arcu congue. Donec id arcu nec mauris pharetra ultricies nec in justo.
 

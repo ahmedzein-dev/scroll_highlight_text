@@ -22,8 +22,10 @@ class TextScrollHighlight {
     }
 
     final query = inputText.trim();
-    final pattern = keyCurrentState.widget.treatInputAsRegex ? query : RegExp.escape(query);
-    final regex = RegExp(pattern, caseSensitive: keyCurrentState.widget.caseSensitive);
+    final pattern =
+        keyCurrentState.widget.treatInputAsRegex ? query : RegExp.escape(query);
+    final regex =
+        RegExp(pattern, caseSensitive: keyCurrentState.widget.caseSensitive);
 
     final matches = regex.allMatches(keyCurrentState.widget.text).toList();
     _lastMatches = matches;
@@ -57,7 +59,8 @@ class TextScrollHighlight {
     final keyCurrentState = _getKeyCurrentState();
     if (keyCurrentState == null) return;
     if (_lastMatches.isEmpty) return;
-    _currentMatchIndex = (_currentMatchIndex - 1 + _lastMatches.length) % _lastMatches.length;
+    _currentMatchIndex =
+        (_currentMatchIndex - 1 + _lastMatches.length) % _lastMatches.length;
     _scrollToMatchIndex(keyCurrentState, _currentMatchIndex);
   }
 
@@ -71,15 +74,18 @@ class TextScrollHighlight {
     _scrollToMatchIndex(keyCurrentState, _currentMatchIndex);
   }
 
-  static void _scrollToMatchIndex(HighlightedTextScrollableState keyCurrentState, int index) {
+  static void _scrollToMatchIndex(
+      HighlightedTextScrollableState keyCurrentState, int index) {
     if (_lastMatches.isEmpty) return;
     if (index < 0 || index >= _lastMatches.length) return;
 
     final match = _lastMatches[index];
-    final textBeforeMatch = keyCurrentState.widget.text.substring(0, match.start);
+    final textBeforeMatch =
+        keyCurrentState.widget.text.substring(0, match.start);
 
     TextScrollHighlightHelper._scrollToWord([match], textBeforeMatch);
-    keyCurrentState.updateMatchInfo(index: index + 1, total: _lastMatches.length);
+    keyCurrentState.updateMatchInfo(
+        index: index + 1, total: _lastMatches.length);
     keyCurrentState.widget.onMatchChanged?.call(index + 1, _lastMatches.length);
   }
 
@@ -89,7 +95,8 @@ class TextScrollHighlight {
     return keyCurrentState;
   }
 
-  static void _setKeyCurrentState(HighlightedTextScrollableState? keyCurrentState) {
+  static void _setKeyCurrentState(
+      HighlightedTextScrollableState? keyCurrentState) {
     if (keyCurrentState != null) {
       TextScrollHighlightHelper._setKeyCurrentState(keyCurrentState);
     }
@@ -99,7 +106,8 @@ class TextScrollHighlight {
 class TextScrollHighlightHelper {
   static late HighlightedTextScrollableState _currentState;
 
-  static void _setKeyCurrentState(HighlightedTextScrollableState highlightedTextScrollableState) {
+  static void _setKeyCurrentState(
+      HighlightedTextScrollableState highlightedTextScrollableState) {
     _currentState = highlightedTextScrollableState;
   }
 
@@ -140,9 +148,12 @@ class TextScrollHighlightHelper {
     return spans;
   }
 
-  static void _scrollToWord(Iterable<Match> matches, String? textBeforeFirstMatch) {
-    final numberOfCharactersInLine = _calculateNumberOfCharactersByScreenWidth();
-    final lineNumber = ((matches.first.start / numberOfCharactersInLine)).floor();
+  static void _scrollToWord(
+      Iterable<Match> matches, String? textBeforeFirstMatch) {
+    final numberOfCharactersInLine =
+        _calculateNumberOfCharactersByScreenWidth();
+    final lineNumber =
+        ((matches.first.start / numberOfCharactersInLine)).floor();
     final offset = _calculateOffset(lineNumber, textBeforeFirstMatch);
     _currentState.scrollController.animateTo(
       offset,
@@ -151,39 +162,48 @@ class TextScrollHighlightHelper {
     );
   }
 
-  static TextPainter _getTextPainter(HighlightedTextScrollableState currentState) {
+  static TextPainter _getTextPainter(
+      HighlightedTextScrollableState currentState) {
     if (currentState.widget.textDirection == TextDirection.ltr) {
       return TextPainter(
-        text: TextSpan(text: 'a', style: currentState.widget.unHighlightedTextStyle),
+        text: TextSpan(
+            text: 'a', style: currentState.widget.unHighlightedTextStyle),
         textDirection: TextDirection.ltr,
       )..layout();
     } else {
       return TextPainter(
-        text: TextSpan(text: 'و', style: currentState.widget.unHighlightedTextStyle),
+        text: TextSpan(
+            text: 'و', style: currentState.widget.unHighlightedTextStyle),
         textDirection: TextDirection.rtl,
       )..layout();
     }
   }
 
   static int _calculateNumberOfCharactersByScreenWidth() {
-    final screenWidth = MediaQuery.of(_currentState.context).size.width - _currentState.widget.padding.horizontal;
-    return ((screenWidth / _getTextPainter(_currentState).width)).floor() + _getWhiteSpaceNumber(_currentState);
+    final screenWidth = MediaQuery.of(_currentState.context).size.width -
+        _currentState.widget.padding.horizontal;
+    return ((screenWidth / _getTextPainter(_currentState).width)).floor() +
+        _getWhiteSpaceNumber(_currentState);
   }
 
   static int _getWhiteSpaceNumber(HighlightedTextScrollableState currentState) {
     return 120 ~/ currentState.widget.unHighlightedTextStyle.fontSize!;
   }
 
-  static int _countTextEmptyLines(HighlightedTextScrollableState currentState, String? textBeforeFirstMatch) {
+  static int _countTextEmptyLines(HighlightedTextScrollableState currentState,
+      String? textBeforeFirstMatch) {
     if (textBeforeFirstMatch == null || textBeforeFirstMatch.isEmpty) return 0;
     final lines = textBeforeFirstMatch.split('\n'); // Split the text into lines
     return lines.where((line) => line.trim().isEmpty).length;
   }
 
   static double _calculateOffset(int lineNumber, String? textBeforeFirstMatch) {
-    final defaultLines =
-        _currentState.widget.textDirection == TextDirection.ltr ? AppSpacing.oneLine : AppSpacing.oneLine;
-    final offset = ((lineNumber + _countTextEmptyLines(_currentState, textBeforeFirstMatch) - defaultLines) *
+    final defaultLines = _currentState.widget.textDirection == TextDirection.ltr
+        ? AppSpacing.oneLine
+        : AppSpacing.oneLine;
+    final offset = ((lineNumber +
+                _countTextEmptyLines(_currentState, textBeforeFirstMatch) -
+                defaultLines) *
             _getTextPainter(_currentState).height) +
         _currentState.widget.padding.vertical / 2;
     return offset;
