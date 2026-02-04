@@ -6,7 +6,7 @@ This Flutter package enables highlighting and scrolling through text content in 
 
 Here's a quick preview of `ScrollHighlightText` in action:
 
-<div style="text-align:center;">
+<p align="center">
   <img 
     src="https://github.com/AhmedZein1996/scroll_highlight_text/raw/main/assets/example1.gif"
     alt="Scroll Highlight Text Demo"
@@ -15,7 +15,7 @@ Here's a quick preview of `ScrollHighlightText` in action:
   />
   <br/>
   <em>Search, highlight and jump between matches smoothly.</em>
-</div>
+</p>
 
 
 ## Usage
