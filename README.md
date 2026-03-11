@@ -10,7 +10,7 @@ Here's a quick preview of `ScrollHighlightText` in action:
   <img 
     src="https://github.com/AhmedZein1996/scroll_highlight_text/raw/main/assets/example1.gif"
     alt="Scroll Highlight Text Demo"
-    width="300"
+    width="350"
   />
   <br/>
   <em>Search, highlight and jump between matches smoothly.</em>
