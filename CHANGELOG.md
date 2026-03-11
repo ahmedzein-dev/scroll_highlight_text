@@ -1,46 +1,39 @@
-## 0.0.1
+## 1.0.5 - 1.0.7
 
-- Initial release.
+- Update example1.gif.
 
-## 0.0.2
+## 1.0.4
 
-- Update metadata.
+- Fix: preserve original text casing when highlighting matches.
+- Add: safe literal search by default (`treatInputAsRegex: false`) with optional regex mode.
+- Add: match navigation APIs (`nextMatch`, `previousMatch`, `jumpToMatch`).
+- Add: match callbacks (`onMatchesFound`, `onMatchChanged`, `onSearchCleared`, `onNoMatch`).
+- Add: built-in navigation UI inside `HighlightedTextScrollable` (`showMatchNavigation`).
+- Add: floating (FAB-like) match navigation overlay (`matchNavigationType: MatchNavigationType.floating`).
 
-## 0.0.3
+## 1.0.3
 
-- Fix bug related to empty searched text not being handled properly.
+- Updated metadata.
 
-## 0.0.4
+## 1.0.2
 
-- Update provided example.
+- Updated metadata.
 
-## 0.0.5
+## 1.0.1
 
-- Update metadata.
+- Updated the example.
 
-## 0.0.6
+## 1.0.0
 
-- Refactor code for improved readability and maintainability.
+- Stable version release
 
-## 0.0.7
+## 0.1.4
 
-- Update provided example.
+- Updated example usage of the component.
 
-## 0.0.8
+## 0.1.3
 
-- Update metadata.
-
-## 0.0.9
-
-- Update example.gif.
-
-## 0.1.0 
-
-- Added support for Arabic text.
-
-## 0.1.1
-
-- Update Readme.md.
+- Updated `Readme.md`.
 
 ## 0.1.2
 
@@ -82,40 +75,46 @@ The changes in version 0.1.2 include:
 
 - Updated example usage of the component.
 
-## 0.1.3
+## 0.1.1
 
-- Updated `Readme.md`.
+- Update Readme.md.
 
-## 0.1.4
+## 0.1.0 
 
-- Updated example usage of the component.
+- Added support for Arabic text.
 
-## 1.0.0
+## 0.0.9
 
-- Stable version release 
- 
-- ## 1.0.1
+- Update example.gif.
 
-- Updated the example.
+## 0.0.8
 
-- ## 1.0.2
+- Update metadata.
 
-- Updated metadata.
+## 0.0.7
 
-- ## 1.0.3
+- Update provided example.
 
-- Updated metadata.
+## 0.0.6
 
-## 1.0.4
+- Refactor code for improved readability and maintainability.
 
-- Fix: preserve original text casing when highlighting matches.
-- Add: safe literal search by default (`treatInputAsRegex: false`) with optional regex mode.
-- Add: match navigation APIs (`nextMatch`, `previousMatch`, `jumpToMatch`).
-- Add: match callbacks (`onMatchesFound`, `onMatchChanged`, `onSearchCleared`, `onNoMatch`).
-- Add: built-in navigation UI inside `HighlightedTextScrollable` (`showMatchNavigation`).
-- Add: floating (FAB-like) match navigation overlay (`matchNavigationType: MatchNavigationType.floating`).
+## 0.0.5
 
-## 1.0.5 - 1.0.6
+- Update metadata.
 
-- Update example1.gif.
+## 0.0.4
 
+- Update provided example.
+
+## 0.0.3
+
+- Fix bug related to empty searched text not being handled properly.
+
+## 0.0.2
+
+- Update metadata.
+
+## 0.0.1
+
+- Initial release.
